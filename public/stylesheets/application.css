@@ -8,6 +8,6 @@ body {
   background: #FFFF99;
 }
 
-form.delete {
+form.inline {
   display: inline;
 }

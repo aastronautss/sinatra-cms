@@ -3,11 +3,22 @@
     <li>
       <a href="/<%= file %>"><%= file %></a> |
       <a href="/<%= file %>/edit">edit</a>
-      <form class="delete" action="/<%= file %>/delete" method="post">
+      <form class="inline" action="/<%= file %>/delete" method="post">
         <button type="submit">Delete</button>
       </form>
     </li>
   <% end %>
 </ul>
 
-<p><a href='/new'>Create Document</a></p>
+<p><a href="/new">Create Document</a></p>
+
+<% if admin? %>
+  <p><a href="/users/edit">Manage Users</a></p>
+<% end %>
+
+<p>
+  <em>Signed in as <%= session[:user] %>.</em>
+  <form class="inline" action="/users/signout" method="post">
+    <button type="submit">Sign out</button>
+  </form>
+</p>
